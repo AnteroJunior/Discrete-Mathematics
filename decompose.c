@@ -2,9 +2,9 @@
 #include <math.h>
 #include <stdbool.h>
 
+//PROTOTYPES
 bool isPrime(int number, int startAnalysis);
 void decomposeNumber(int number, int startDiv);
-
 
 int main(){
 
@@ -54,7 +54,7 @@ void decomposeNumber(int number, int startDiv){
 
 	if(number != 1){
 
-		if(isPrime(startDiv, 2)){//SE O DIVISOR FOR PRIMO
+		if(isPrime(startDiv, 2)){//IF STARTDIV IS A PRIME NUMBER
 
 			if(number % startDiv == 0){
 
@@ -70,7 +70,7 @@ void decomposeNumber(int number, int startDiv){
 
 			}
 
-		} else {//SE DIVISOR NÃO FOR PRIMO
+		} else {//IF STARTDIV CANNOT DIVIDE NUMBER
 
 			decomposeNumber(number, startDiv + 1);
 
