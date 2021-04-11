@@ -158,39 +158,3 @@ bool isPrime(int number, int startAnalysis){
 	}
 
 }
-
-void decomposeNumber(int number, int startDiv){
-
-	if(number != 1){
-
-		if(isPrime(startDiv, 2)){//SE O DIVISOR FOR PRIMO
-
-			if(number % startDiv == 0){
-
-				printf("%d ", startDiv);
-
-				number /= startDiv;
-
-				decomposeNumber(number, startDiv);
-
-			} else {
-
-				decomposeNumber(number, startDiv + 1);
-
-			}
-
-		} else {//SE DIVISOR NÃO FOR PRIMO
-
-			decomposeNumber(number, startDiv + 1);
-
-		}
-
-	} else {
-
-		puts("");
-
-		return;
-
-	}
-
-}
