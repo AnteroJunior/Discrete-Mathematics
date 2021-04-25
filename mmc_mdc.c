@@ -113,11 +113,15 @@ int getMDC(int numberA, int numberB, int fatorPrimo, int MDC){
 
 					return getMDC(numberA, numberB, fatorPrimo, MDC);
 
-				} else if(numberB % fatorPrimo == 0){
+				} if(numberB % fatorPrimo == 0){
 
 					numberB /= fatorPrimo;
 
 					return getMDC(numberA, numberB, fatorPrimo, MDC);
+
+				} else {
+
+					return getMDC(numberA, numberB, fatorPrimo + 1, MDC);
 
 				}
 
