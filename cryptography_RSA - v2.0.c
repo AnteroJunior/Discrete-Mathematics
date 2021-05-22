@@ -1,3 +1,7 @@
+/* PROGRAMA CRIADO COM O INTUITO DE GERAR CHAVE PÚBLICA, ENCRIPTAR E DECRIPTAR ARQUIVOS DE TEXTO UTILIZANDO O MÉTODO DE CRIPTOGRAFIA RSA
+COM OS CONCEITOS DE MATEMÁTICA DISCRETA */
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -26,7 +30,7 @@ int main(){
 
 		puts("");
 
-		if(menuOpcao == 1){
+		if(menuOpcao == 1){//GERAR CHAVE PÚBLICA
 
 			puts("***** INFORME P, Q e E PARA GERAR A SUA CHAVE (p q e)*****\n");
 
@@ -56,7 +60,7 @@ int main(){
 
 			}
 
-		} else if(menuOpcao == 2){
+		} else if(menuOpcao == 2){//RECEBER MENSAGEM E ENCRIPTAR MENSAGEM
 
 			char mensagem[3000];
 
@@ -76,7 +80,7 @@ int main(){
 
 			verificaMensagem(mensagem, e, p_q);
 
-		} else if(menuOpcao == 3){
+		} else if(menuOpcao == 3){ //DECRIPTAR MENSAGEM
 
 			puts("***** PARA DECRIPTAR SUA MENSAGEM, INFORME 'P', 'Q' E 'E' QUE FORMAM A CHAVE PÚBLICA\n");
 
@@ -99,7 +103,7 @@ int main(){
 	return 0;
 }
 
-
+/* FUNÇÃO PARA GERAR A CHAVE PÚBLICA E COLOCAR EM UM ARQUIVO CHAMADO 'publicKey.txt' */
 void geraChavePublica(int e, int pq){
 
 	FILE *pntPublicKey = fopen("publicKey.txt", "w");
@@ -110,6 +114,11 @@ void geraChavePublica(int e, int pq){
 
 }
 
+/* FUNÇÃO PARA RECEBER MENSAGEM E ENCRIPTAR 
+A MENSAGEM ENCRIPTADA ESTARÁ NO ARQUIVO 'encrypted.txt'
+
+A VERIFICAÇÃO DA MENSAGEM SE DÁ ATÉ O ÚLTIMO CARACTERE '\N' E AVANÇA DE DOIS EM DOIS
+*/
 void verificaMensagem(char mensagem[], int e, int pq){
 
 	FILE *pntEncrypted = fopen("encrypted.txt", "w");
@@ -187,6 +196,7 @@ int potenciacaoModularRapida(int a, int b, int m){
     return res;
 }
 
+/* ESSA FUNÇÃO ABRE O ARQUIVO ENCRIPTADO E ESCREVE A MENSAGEM DECRIPTADA NO ARQUIVO 'decrypted.txt' */
 void decriptarMensagem(int p, int q, int e){
 
 	FILE *pntEncrypted = fopen("encrypted.txt", "r");
@@ -357,3 +367,5 @@ int verificaMDC(int numA, int numB, int inicioPrimo, int valorMDC){
 	}
 
 }
+
+/* DEVELOPED BY ANTERO JÚNIOR */
