@@ -1,9 +1,8 @@
-# Discrete-Mathematics
-Basic programs used in Discrete Mathematics discipline in order to understand how criptography works using private and public keys.
+# Matemática Discreta - Criptografia RSA
 
-First of all we are going to use simple programs to work with prime numbers:<br>
-1- Check if a number 'n' is prime;<br>
-2- Find the maximum number of primes within 60 seconds;<br>
-3- Decompose a number 'n' in it's prime factors;<br>
-4- Get Least Commom Multiple(LCM) and get Greatest Common Divisor(GCD);<br>
-5- Get the Greatest Common Divisor(GCD) using Euclides Algorithm;<br>
+Desenvolvi um programa que utiliza os conceitos de Matemática Discreta para gerar uma chave pública, encriptar e decriptar arquivos de texto.<br>
+Basicamente a mensagem é composta somente por letras maiúsculas do alfabeto, onde o valor de 'A' começa em 2 e o caractere espaço vale 28.<br>
+
+OBS: Ainda há alguns bugs para serem corrigidos.<br>
+
+O programa foi desenvolvido por Antero Júnior<br>
